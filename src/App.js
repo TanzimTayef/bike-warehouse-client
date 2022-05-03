@@ -1,12 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Pages/Home';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-       <h1>This is This is bike wearhouse project assignment 11</h1>
+      <Routes>
+         <Route path='/' element={<Home/>} />
+      </Routes>
     </div>
   );
 }
