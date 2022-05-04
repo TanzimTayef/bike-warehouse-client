@@ -29,6 +29,7 @@ let from = location.state?.from?.pathname || "/";
   const handleLoginForm = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
+    e.target.reset();
 
   }
 

@@ -38,9 +38,8 @@ const Register = () => {
 
     // create user
     createUserWithEmailAndPassword(email, password);
-    if (user) {
-     console.log(user)
-   }
+    e.target.reset();
+    
   };
 
   return (
