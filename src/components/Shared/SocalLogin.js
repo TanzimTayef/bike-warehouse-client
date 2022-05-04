@@ -10,9 +10,9 @@ const SocalLogin = () => {
   
 
  
- if (gUser) {
+ if (user || gUser) {
    navigate("/");
-   
+
  }
 
 
