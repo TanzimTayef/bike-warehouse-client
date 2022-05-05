@@ -40,7 +40,7 @@ const Header = () => {
             Home
           </Link>
           <Link to="/inventory" className="mr-5 hover:text-gray-900">
-            Inventory
+         Manage Inventories
           </Link>
           <Link to="/service" className="mr-5 hover:text-gray-900">
             Service
