@@ -3,13 +3,13 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="text-white bg-slate-700">
-        <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
+        <div className="container px-5 py-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
           <div className="w-1/2 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
              
               <span className="ml-3 text-2xl uppercase font-bold text-slate-300">Bike Inventory Management</span>
             </a>
-            <p className="mt-2 text-sm text-slate-200">Bike warehouse to meet your unique needs. Empower every team, from IT to HR to legal, to set up a service desk quickly and continuously adapt at scale.</p>
+            <p className="mt-2 px-3 text-sm text-slate-200">Bike warehouse to meet your unique needs. Empower every team, from IT to HR to legal, to set up a service desk quickly and continuously adapt at scale.</p>
           </div>
           <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
             <div className="lg:w-1/2 md:w-1/2 w-full px-4">
