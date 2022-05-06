@@ -1,12 +1,10 @@
 import React from "react";
-import PriceCart from "./PriceCart";
-import SectionTiltle from "./SectionTiltle";
 
 const Pricing = () => {
  
 
   return (
-    <section className="text-gray-700 body-font overflow-hidden">
+    <section className="text-gray-700 body-font overflow-hidden bg-gray-100">
       <div className="container px-5 py-24 mx-auto">
         <div className="mb-24">
           <h1 className="text-4xl font-bold text-center uppercase text-slate-700">
@@ -17,7 +15,7 @@ const Pricing = () => {
         </div>
         <div className="flex flex-wrap -m-4">
           <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
-            <div className=" shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
+            <div className=" bg-white shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
               <h2 className="text-sm tracking-widest title-font mb-1 font-medium">
                 START
               </h2>
@@ -92,7 +90,7 @@ const Pricing = () => {
             </div>
           </div>
           <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
-            <div className=" shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
+            <div className=" bg-white shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
               <h2 className="text-sm tracking-widest title-font mb-1 font-medium">
                 START
               </h2>
@@ -167,7 +165,7 @@ const Pricing = () => {
             </div>
           </div>
           <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
-            <div className=" shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
+            <div className=" bg-white shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
               <h2 className="text-sm tracking-widest title-font mb-1 font-medium">
                 START
               </h2>
@@ -242,7 +240,7 @@ const Pricing = () => {
             </div>
           </div>
           <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
-            <div className=" shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
+            <div className=" bg-white shadow-lg shadow-slate-400 h-full p-6 rounded-l flex flex-col relative overflow-hidden">
               <h2 className="text-sm tracking-widest title-font mb-1 font-medium">
                 START
               </h2>

@@ -1,6 +1,4 @@
 import React from "react";
-import SectionTiltle from "./SectionTiltle";
-import Service from "./Service";
 
 const Services = () => {
   return (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SectionTiltle from "./SectionTiltle";
 import Stock from "./Stock";
 
 const Stocks = () => {
