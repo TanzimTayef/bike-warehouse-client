@@ -4,16 +4,22 @@ import Contact from "../Contact";
 import Pricing from "../Pricing";
 import Services from "../Services";
 import Stocks from "../Stocks";
+import Header from "../Header";
+import Footer from "../Footer";
 
 const Home = () => {
   return (
-    <>
-      <Banner />
+    <div>
+      <div id="banner">
+        <Header />
+        <Banner />
+      </div>
       <Services />
       <Pricing />
       <Stocks />
       <Contact />
-    </>
+      <Footer />
+    </div>
   );
 };
 

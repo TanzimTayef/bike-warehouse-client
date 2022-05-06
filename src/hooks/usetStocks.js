@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
 
-const useStocks = () => {
-    const [stocks, setStocks] = useState({});
+const useStocksDetails = (stockId) => {
+    const [stock, setStock] = useState({});
    
     useEffect(() => {
-        fetch("stocks.js")
+        fetch(`http://localhost:8080/stocks/${stockId}`)
             .then(res => res.json())
-            .then(data => setStocks(data));
-    })
-    return [stocks, setStocks];
+            .then(data => setStock(data));
+    }, [stockId])
+    return [stock, setStock];
 }
 
 
-export default useStocks;
+export default useStocksDetails;
