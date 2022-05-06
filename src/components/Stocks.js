@@ -34,7 +34,7 @@ const Stocks = () => {
            </div>
         <div className="pt-8 text-right">
         <button onClick={handleManageInvetoris}
-            className="inline-flex items-center bg-slate-800 text-white border-0 py-2 px-6 focus:outline-none rounded text-base mt-4 md:mt-0"
+            className="inline-flex items-center bg-slate-800 hover:bg-slate-700 text-white border-0 py-2 px-6 focus:outline-none rounded text-base mt-4 md:mt-0"
           >
           Manage Invetories
             <svg

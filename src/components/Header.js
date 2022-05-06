@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-slate-800  h-24 items-center flex sticky ">
+    <header className="bg-slate-800  py-1 items-center flex sticky ">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         
@@ -57,7 +57,7 @@ const Header = () => {
         {user ? (
           <button
             onClick={handleSignOut}
-            className="inline-flex items-center border-0 py-1 px-3 focus:outline-none bg-slate-700 text-white rounded text-base mt-4 md:mt-0"
+            className="inline-flex uppercase text-sm items-center border-0 py-1 px-3 focus:outline-none bg-slate-700 text-white rounded text-base mt-4 md:mt-0"
           >
             Sign out
             <svg
@@ -75,7 +75,7 @@ const Header = () => {
         ) : (
           <button
             onClick={handleBtnLogin}
-            className="inline-flex items-center text-white font-medium border-0 py-2 px-4 focus:outline-none bg-slate-700 rounded text-base mt-4 md:mt-0"
+            className="inline-flex uppercase text-sm items-center text-white font-medium border-0 py-2 px-4 focus:outline-none bg-slate-700 rounded text-base mt-4 md:mt-0"
           >
             Log in
             <svg
