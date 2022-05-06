@@ -6,7 +6,9 @@ const Inventores = () => {
   const { inventoresId } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:8080/stocks/${inventoresId}}`)
+    const url = `http://localhost:8080/stocks/${inventoresId}}`;
+    console.log(url)
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [inventoresId]);
@@ -18,6 +20,9 @@ const Inventores = () => {
           <h2 className="text-left   font-medium text-4xl">
               Inventory Management
             </h2>
+            {
+              item.name
+            }
           </div>
        
         <div className="container py-4 mb-8 px-6 rounded-md shadow-sm mx-auto w-full bg-white">

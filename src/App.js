@@ -13,11 +13,10 @@ import ManageItem from "./components/Pages/ManageItem";
 import AddItems from "./components/Pages/AddItems";
 import MyItems from "./components/Pages/MyItems";
 
-
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
@@ -25,13 +24,19 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/manage-item" element={<ManageItem />} />
         <Route path="/add-item" element={<AddItems />} />
-        <Route path="/my-item" element={<MyItems />} />  
-        <Route path="/invetores/:inventoresId" element={<Inventores />} />
+        <Route path="/my-item" element={<MyItems />} />
+        <Route
+          path="/invetores/:inventoresId"
+          element={
+            <RequireAuth>
+              <Inventores />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-     
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
