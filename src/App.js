@@ -25,12 +25,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/manage-item" element={<ManageItem />} />
         <Route path="/add-item" element={<AddItems />} />
-        <Route path="/my-item" element={<MyItems />} />
-        
+        <Route path="/my-item" element={<MyItems />} />  
         <Route path="/invetores/:inventoresId" element={<Inventores />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/invetores" element={<Inventores />} />
+     
       </Routes>
       <Footer/>
     </div>

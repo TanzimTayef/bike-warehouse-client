@@ -11,8 +11,8 @@ const Services = () => {
           </h1>
           <div className=" border-blue-400  border-b-4 pt-2 mx-auto  w-24 "></div>
         </div>
-        <div className="flex justify-evenly sm:flex-wrap w-full justify-center items-center">
-          <div className="border-2 min:h-80 w-80 shadow rounded-lg">
+        <div className="flex justify-evenly  flex-wrap -m-4 w-full justify-center items-center">
+          <div className="border-2 min:h-80 w-80 shadow rounded-lg mb-6 ">
             <h1 className="bg-slate-100 w-full py-4 flex items-center justify-center font-medium text-slate-800 text-2xl">Free</h1>
             <div className=" py-8 px-4 text-center">
             <p className="text-4xl font-bold text-slate-800 mb-2 animate-bounce">USD 0</p>
@@ -24,7 +24,7 @@ const Services = () => {
             <p className="text-sm mt-2 px-4">For small teams getting started with a service desk</p>
             </div>
           </div>
-          <div className="border-2 min:h-80 w-80 shadow rounded-lg">
+          <div className="border-2 min:h-80 w-80 shadow rounded-lg mb-6">
             <h1 className="bg-slate-100 w-full py-4 flex items-center justify-center font-medium text-slate-800 text-2xl">Standard</h1>
             <div className=" py-8 px-4 text-center">
             <p className="text-4xl font-bold text-slate-800 mb-2 animate-bounce">USD 20</p>
@@ -36,7 +36,7 @@ const Services = () => {
             <p className="text-sm mt-2 px-4">For teams maturing to standardized service desk and ITSM practices</p>
             </div>
           </div>
-          <div className="border-2 min:h-80 w-80 shadow rounded-lg">
+          <div className="border-2 min:h-80 w-80 shadow rounded-lg mb-6">
             <h1 className="bg-slate-100 w-full py-4 flex items-center justify-center font-medium text-slate-800 text-2xl">Premium</h1>
             <div className=" py-8 px-4 text-center">
             <p className="text-4xl font-bold text-slate-800 mb-2 animate-bounce">USD 45</p>

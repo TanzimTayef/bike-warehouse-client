@@ -22,34 +22,32 @@ const Header = () => {
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         
-          <span className="ml-3 text-2xl uppercase font-bold text-blue-400">Bike Warehouse</span>
+          <span className="ml-3 text-5xl uppercase font-bold text-white">Bim</span>
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l  md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-          <Link to="/" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+          <Link to="/" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
             Home
           </Link>
-          <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+          <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
             About
           </Link>
-          <Link to="/blogs" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+          <Link to="/blogs" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
             Blogs
           </Link>
-          <Link to="/inventory" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
-           Inventories
-          </Link>
+         
           {
-            user ?  <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+            user ?  <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
             Manage Item
           </Link> : ''
          }
           {
-            user?  <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+            user?  <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
             Add Item
           </Link> : ''
          }
 
           {
-            user ?  <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+            user ?  <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
             My Item
           </Link>: ''
           }
@@ -59,7 +57,7 @@ const Header = () => {
         {user ? (
           <button
             onClick={handleSignOut}
-            className="inline-flex items-cente border-0 py-1 px-3 focus:outline-none bg-gray-300 rounded text-base mt-4 md:mt-0"
+            className="inline-flex items-center border-0 py-1 px-3 focus:outline-none bg-slate-700 text-white rounded text-base mt-4 md:mt-0"
           >
             Sign out
             <svg
