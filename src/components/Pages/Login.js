@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 import SocalLogin from "../Shared/SocalLogin";
 
 const Login = () => {
@@ -21,6 +22,9 @@ const navigate = useNavigate();
 const location = useLocation();
 let from = location.state?.from?.pathname || "/";
  
+  if (loading || sending) {
+    return <Loading/>
+  }
 
  if (user) {
    navigate(from, { replace: true });
@@ -44,7 +48,7 @@ let from = location.state?.from?.pathname || "/";
   return (
     <div className="bg-gray-100">
       <div className=" md:w-1/3 py-16 mx-6 md:mx-auto">
-        <h1 className="text-3xl font-bold mb-12">Sign in to your account</h1>
+        <h1 className="text-3xl text-center font-bold mb-12">Sign in to your account</h1>
         <div className=" px-8 py-12 shadow-md bg-white rounded-lg">
           <form onSubmit={handleLoginForm}>
             <div className="text-left mb-4">

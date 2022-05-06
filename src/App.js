@@ -12,6 +12,8 @@ import Footer from "./components/Footer";
 import ManageItem from "./components/Pages/ManageItem";
 import AddItems from "./components/Pages/AddItems";
 import MyItems from "./components/Pages/MyItems";
+import NotFound from "./components/Shared/NotFound";
+
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

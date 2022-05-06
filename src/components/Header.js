@@ -25,29 +25,29 @@ const Header = () => {
           <span className="ml-3 text-5xl uppercase font-bold text-white">Bim</span>
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l  md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-          <Link to="/" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
+          <Link to="/" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Home
           </Link>
-          <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
+          <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             About
           </Link>
-          <Link to="/blogs" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
+          <Link to="/blogs" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Blogs
           </Link>
          
           {
-            user ?  <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
+            user ?  <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Manage Item
           </Link> : ''
          }
           {
-            user?  <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
+            user?  <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Add Item
           </Link> : ''
          }
 
           {
-            user ?  <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 hover:text-gray-900">
+            user ?  <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             My Item
           </Link>: ''
           }

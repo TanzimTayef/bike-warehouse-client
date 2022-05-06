@@ -6,14 +6,19 @@ import {
   useCreateUserWithEmailAndPassword,
   useSendEmailVerification,
 } from "react-firebase-hooks/auth";
+import Loading from "../Shared/Loading";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   let navigate = useNavigate();
 
-  // user navigate
 
+  if (loading) {
+    return <Loading/>
+  }
+
+  // user navigate
     if (user) {
       navigate("/");
     }
@@ -45,7 +50,7 @@ const Register = () => {
   return (
     <div className="bg-gray-100">
       <div className=" md:w-1/3 py-16 mx-6 md:mx-auto">
-        <h1 className="text-3xl font-bold mb-12">Sign in to your account</h1>
+        <h1 className="text-3xl text-center font-bold mb-12">Create an account</h1>
         <div className=" px-8 py-12 shadow-md bg-white rounded-lg">
           <form onSubmit={handleRegister}>
             <div className="text-left mb-4">
