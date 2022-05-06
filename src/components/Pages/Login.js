@@ -88,7 +88,7 @@ let from = location.state?.from?.pathname || "/";
               </div>
               <button onClick={handleResetPassword} className="text-indigo-700 font-medium hover:underline">
                 {" "}
-                Forgot your password?
+                Forgot password?
               </button>
             </div>
             <button className="border block w-full py-2 rounded-lg bg-teal-800 text-white uppercase hover:bg-teal-600">

@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <header className=" opacity-75 bg-slate-800  h-24 items-center flex sticky ">
+    <header className="bg-slate-800  h-24 items-center flex sticky ">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         
@@ -31,25 +31,25 @@ const Header = () => {
           <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
             About
           </Link>
-          <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+          <Link to="/blogs" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
             Blogs
           </Link>
           <Link to="/inventory" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
            Inventories
           </Link>
           {
-            user ?  <Link to="/service" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+            user ?  <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
             Manage Item
           </Link> : ''
          }
           {
-            user?  <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+            user?  <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
             Add Item
           </Link> : ''
          }
 
           {
-            user ?  <Link to="my item" className="hover:text-blue-700 text-sm uppercase font-bold mr-5 hover:text-gray-900">
+            user ?  <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-bold mr-5 hover:text-gray-900">
             My Item
           </Link>: ''
           }
