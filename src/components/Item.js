@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const Item = ({ item }) => {
-  const { _id, picture, desc, name, price } = item;
+
+
+
+const Item = () => {
+  
 
   return (
     <div className="flex justify-between items-center">
@@ -16,16 +20,16 @@ const Item = ({ item }) => {
           </tr>
           <tr className="shadow">
             <td className="flex items-center px-4 py-4">
-              <img src="" alt="img" className="w-16 h-16 border" />
+              <img src='' alt="img" className="w-16 h-16 border" />
               <div className="ml-4">
                 <p>name</p>
-                <p>di</p>
-                <p>desc</p>
+                <p>id</p>
+                <p>imtes</p>
               </div>
             </td>
-            <td className="px-4 py-4">john do</td>
+            <td className="px-4 py-4">name</td>
             <td className="px-4 py-4">1</td>
-            <td className="px-4 py-4">$25</td>
+            <td className="px-4 py-4">89</td>
             <td className="px-4 py-4">35</td>
             <td className="px-4 py-4 ">
               <div className="">

@@ -12,7 +12,7 @@ const Banner = () => {
             together
           </h1>
           <p className="mb-8 leading-relaxed text-gray-200 text-justify">
-          By subscribing to our company BIM you will always be up-to-date on our latest promotions, deals and vehicle inventory!
+          By subscribing to our company BIM you will always be up-to-date on our latest promotions, deals and bike inventory!
           </p>
           <div className="flex items-center hover:text-sky-300   ">
             <button className=" hover:text-sky-300   text-white focus:outline-none mr-2 font-bold text-indigo-100 rounded text-lg">
