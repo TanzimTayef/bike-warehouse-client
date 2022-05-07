@@ -57,7 +57,7 @@ const Header = () => {
         {user ? (
           <button
             onClick={handleSignOut}
-            className="inline-flex uppercase text-sm items-center border-0 py-1 px-3 focus:outline-none bg-slate-700 text-white rounded text-base mt-4 md:mt-0"
+            className="inline-flex uppercase text-sm items-center border-0 py-2 px-3 focus:outline-none bg-slate-700 text-white rounded text-base mt-4 md:mt-0"
           >
             Sign out
             <svg

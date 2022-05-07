@@ -11,7 +11,7 @@ const Services = () => {
           </h1>
           <div className=" border-blue-400  border-b-4 pt-2 mx-auto  w-24 "></div>
         </div>
-        <div className="flex justify-evenly  flex-wrap -m-4 w-full justify-center items-center">
+        <div className="flex justify-evenly  flex-wrap -m-4 w-full  items-center">
           <div className="border-2 min:h-80 w-80 shadow rounded-lg mb-6 ">
             <h1 className="bg-slate-100 w-full py-4 flex items-center justify-center font-medium text-slate-800 text-2xl">Free</h1>
             <div className=" py-8 px-4 text-center">
@@ -48,8 +48,6 @@ const Services = () => {
             <p className="text-sm mt-2 px-4">For organizations seeking high-velocity ITSM at scale</p>
             </div>
           </div>
-        
-         
         </div>
       </div>
     </section>
