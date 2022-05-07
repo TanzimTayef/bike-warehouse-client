@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetails = () => {
     const [item, setItem] = useState({});
-    const { inventoresId } = useParams();
+  const { inventoresId } = useParams();
+  const [quan, setQuan] = useState();
+  const [deliveredItem, setDeliveredItem] = useState();
+
+
+
   
   
     useEffect(() => {
@@ -13,7 +18,20 @@ const ItemDetails = () => {
         .then((res) => res.json())
         .then((data) => setItem(data));
     }, [inventoresId]);
-    // handle delivered button for increase the item quantity:
+
+  
+    // handle Restock button to add the quantity:
+  const hanldeRestock = (e) => {
+    e.preventDefault();
+    const addQ = e.target.number.value;
+
+    const newQuan = item.price + addQ;
+    setQuan(newQuan);
+    e.target.reset();
+  }
+
+  // Handle delivered to decrease Quantify:
+ 
 
     return (
         <section className="body-font bg-slate-100 pb-16 pt-8">
@@ -31,17 +49,17 @@ const ItemDetails = () => {
                 <img src={item.picture} className="max-w-md max-h-md w-full" alt="img" />
                   </div>
                 <div className="md:pl-6 w-96 sm:mt-4">
-                  <p className="text-2xl mb-3 font-medium">Quantity: {item.price}</p>
+                <p className="text-2xl mb-3 font-medium">Quantity: {quan}</p>
                   <p className="text-xl mb-3 font-m">Price: {item.price}</p>
   
                   <p className="text-sm">{item.desc}</p>
                   <p className="py-4 text-xl">{item.name}</p>
                   <div className="flex flex-wrap justify-center w-full bg-slate-50 pt-4 pb-8 shadow rounded-lg">
-                    <form >
-                      <input type="number" className="border-2 w-16 mr-2 py-1 px-2 outline-none border-gray-300 " />
-                      <button className="border hover:bg-slate-800  px-8 py-1 bg-slate-700 text-white">Restock</button>
+                    <form onSubmit={hanldeRestock}>
+                      <input type="number" name="number" className="border-2 w-16 mr-2 py-1 px-2 outline-none border-gray-300 " />
+                      <button type='submit' className="border hover:bg-slate-800  px-8 py-1 bg-slate-700 text-white">Restock</button>
                     </form>
-                    <button className="ml-6 border px-4 hover:bg-slate-500 bg-slate-400 text-white font-medium">Delivered</button>
+                    <button onClick={() => setQuan(parseInt(item.price) - 1 )} className="ml-6 border px-4 hover:bg-slate-500 bg-slate-400 text-white font-medium">Delivered</button>
                   </div>
                 </div>
              </div>

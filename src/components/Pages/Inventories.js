@@ -16,7 +16,7 @@ const Inventories = () => {
   return (
     <section className="bg-slate-50">
       <div className="flex">
-        <div className="w-40 bg-black text-white"> this is sid bar</div>
+        <div className="w-40 bg-slate-700 text-white"> this is sid bar</div>
         <div className="flex-auto">
           <div className=" mx-16">
             <div className="flex justify-between pt-8 mb-4">
@@ -64,7 +64,7 @@ const Inventories = () => {
                 </thead>
                 <tbody>
                 {stocks.map((stock) => (
-                <Item stock={stock} />
+                <Item stock={stock} setStocks={setStocks} />
               ))}
                 </tbody>
               </table>
