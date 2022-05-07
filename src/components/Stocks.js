@@ -14,7 +14,7 @@ const Stocks = () => {
   
 
   const handleManageInvetoris = () => {
-    navigate("/inventores");
+    navigate("/inventories");
   }
 
   return (

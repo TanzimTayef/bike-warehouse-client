@@ -4,7 +4,6 @@ import Home from "./components/Pages/Home";
 import Login from "./components/Pages/Login";
 import Register from "./components/Pages/Register";
 import RequireAuth from "./components/Shared/RequireAuth";
-import Inventores from "./components/Pages/Inventores";
 import Blogs from "./components/Pages/Blogs";
 import About from "./components/Pages/About";
 import Header from "./components/Header";
@@ -13,6 +12,8 @@ import ManageItem from "./components/Pages/ManageItem";
 import AddItems from "./components/Pages/AddItems";
 import MyItems from "./components/Pages/MyItems";
 import NotFound from "./components/Shared/NotFound";
+import ItemDetails from "./components/Pages/ItemDetails";
+import Inventories from "./components/Pages/Inventories";
 
 
 function App() {
@@ -27,11 +28,12 @@ function App() {
         <Route path="/manage-item" element={<ManageItem />} />
         <Route path="/add-item" element={<AddItems />} />
         <Route path="/my-item" element={<MyItems />} />
+        <Route path="/inventories" element={<Inventories />} />
         <Route
           path="/invetores/:inventoresId"
           element={
             <RequireAuth>
-              <Inventores />
+              <ItemDetails/>
             </RequireAuth>
           }
         />

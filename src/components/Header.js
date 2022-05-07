@@ -28,6 +28,11 @@ const Header = () => {
           <Link to="/" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Home
           </Link>
+        {
+          user?   <Link to="/inventories" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
+          Manage Inventories
+        </Link>: ''
+        }
           <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             About
           </Link>
