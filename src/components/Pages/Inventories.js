@@ -7,6 +7,11 @@ const Inventories = () => {
   const [stocks, setStocks] = useState([]);
   const navigate = useNavigate();
 
+
+  const handleAddToItem = () => {
+    navigate("/add-item");
+  }
+
   useEffect(() => {
     fetch("http://localhost:8080/stocks")
       .then((res) => res.json())
@@ -14,10 +19,24 @@ const Inventories = () => {
   }, []);
 
 
+  const handleItemRemove = (id) => {
+    const procceed = window.confirm("Are You sure want to remove this?");
+    if (procceed) {
+      const url = `http://localhost:8080/stocks/${id}`;
+      console.log(url)
+      fetch(url, {
+        method: "DELETE"
+      })
+        .then(res => res.json())
+        .then(data => console.log(data));
+      const remaining = stocks.filter(stock => stock._id !== id);
+      setStocks(remaining);
+     
 
-  const handleAddToItem = () => {
-    navigate("/add-item");
-  }
+    }
+}
+ 
+
 
   return (
     <section className="bg-slate-50">
@@ -70,7 +89,7 @@ const Inventories = () => {
                 </thead>
                 <tbody>
                 {stocks.map((stock) => (
-                <Item stock={stock} setStocks={setStocks} />
+                <Item stock={stock} handleItemRemove={handleItemRemove}  />
               ))}
                 </tbody>
               </table>
