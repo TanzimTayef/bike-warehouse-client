@@ -13,6 +13,12 @@ const Inventories = () => {
       .then((data) => setStocks(data));
   }, []);
 
+
+
+  const handleAddToItem = () => {
+    navigate("/add-item");
+  }
+
   return (
     <section className="bg-slate-50">
       <div className="flex">
@@ -48,7 +54,7 @@ const Inventories = () => {
             </div>
             <div className="border-b py-6 flex justify-between">
             <h1 className="text-2xl font-medium ">Inventory Management</h1>
-             <button className="bg-slate-600 hover:bg-slate-500 text-white px-6 py-2 rounded-md">Add To Item</button>
+             <button onClick={handleAddToItem} className="bg-slate-600 hover:bg-slate-500 text-white px-6 py-2 rounded-md">Add To Item</button>
            </div>
             <div className="bg-white mb-8 py-6 px-6 rounded-md shadow mt-6">
               <table class="table-auto w-full text-left">

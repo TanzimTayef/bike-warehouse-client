@@ -1,39 +1,42 @@
 import React from "react";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Stock = ({ stock }) => {
-  const {_id, picture, price, name, desc, items } = stock;
+  const { _id, images, price, name,supplier, decs, quantity } = stock;
   const navigate = useNavigate();
 
   const navigateToInventory = (_id) => {
-       navigate(`/invetores/${_id}`)
-  }
+    navigate(`/invetores/${_id}`);
+  };
   return (
     <div className="lg:w-1/3 h-full sm:w-1/2 p-4">
       <div className="border-2 border-gray-200 relative text-left">
         <div className="h-64">
-        <img
-          alt="gallery"
-          className=" w-full h-full object-cover object-center "
-          src={picture}
-        />
-      </div>
+          <img
+            alt="gallery"
+            className=" w-full h-full object-cover object-center "
+            src={images}
+          />
+        </div>
         <p className="absolute top-0 right-0  bg-slate-800 text-white text-center px-3 py-3 text-2xl font-medium">
-         {price}
+          {price}
         </p>
         <div className="px-8 py-8 z-10 w-full  bg-white">
           <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-             {items}
+            {name}
           </h1>
-          <p className="leading-relaxed mb-4">{desc.slice(0, 80)}...</p>
+          <p className="leading-relaxed mb-4">{decs.slice(0, 100)}...</p>
           <div className="flex justify-between">
-            <p>{name}</p>
+            <p>{supplier}</p>
             <div>
-              <span className="mr-3">Quantity: 1</span>
+              <span className="mr-3">Quantity: {quantity}</span>
             </div>
           </div>
         </div>
-        <button onClick={() => navigateToInventory(_id)} className="flex items-center uppercase text-white bg-slate-800 border-0 py-2 px-4 w-full focus:outline-none hover:bg-slate-700 text-sm">
+        <button
+          onClick={() => navigateToInventory(_id)}
+          className="flex items-center uppercase text-white bg-slate-800 border-0 py-2 px-4 w-full focus:outline-none hover:bg-slate-700 text-sm"
+        >
           Stock update
           <svg
             fill="none"

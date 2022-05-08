@@ -29,7 +29,7 @@ const Stocks = () => {
         </div>
             <div className="flex flex-wrap -m-4">
          {
-            stocks.slice(6, 12).map(stock => <Stock key={stock._id} stock={stock} />)
+            stocks.slice(0, 6).map(stock => <Stock key={stock._id} stock={stock} />)
          }
            </div>
         <div className="pt-8 text-right">

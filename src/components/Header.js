@@ -28,35 +28,34 @@ const Header = () => {
           <Link to="/" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Home
           </Link>
-        {
-          user?   <Link to="/inventories" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
-          Manage Inventories
-        </Link>: ''
-        }
           <Link to="/about" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             About
           </Link>
           <Link to="/blogs" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Blogs
           </Link>
-         
           {
-            user ?  <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
+            user && <>
+            <Link to="/inventories" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
+           Inventories
+              </Link>
+              <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Manage Item
-          </Link> : ''
-         }
-          {
-            user?  <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
+          </Link>
+          <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Add Item
-          </Link> : ''
-         }
-
-          {
-            user ?  <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
+              </Link>
+              <Link to="my-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             My Item
-          </Link>: ''
+          </Link>
+            </>
           }
-          
+     
+         
+        
+        
+
+         
         </nav>
 
         {user ? (

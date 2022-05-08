@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Item = ({ stock, setStock }) => {
-  const { _id, picture, price, name } = stock;
+  const { _id, images, price, name, supplier, quantity } = stock;
 
 
   const handleItemRemove = (id) => {
@@ -25,7 +25,7 @@ const Item = ({ stock, setStock }) => {
     <tr className="px-1 hover:bg-gray-100 border-b px-2 rounded">
       <td className=" py-2">{_id}</td>
       <td className=" py-2">
-        <img src={picture} className="w-16 h-16" alt="" />
+        <img src={images} className="w-16 h-16" alt="" />
       </td>
       <td className=" py-2">{name}</td>
       <td className=" py-2">{price}</td>
