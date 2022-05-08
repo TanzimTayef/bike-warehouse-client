@@ -37,10 +37,10 @@ const Header = () => {
           {
             user && <>
             <Link to="/inventories" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
-           Inventories
+           Manage Item
               </Link>
               <Link to="/manage-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
-            Manage Item
+            Analytics
           </Link>
           <Link to="/add-item" className="text-gray-200 hover:text-slate-50 text-sm uppercase font-medium mr-5 ">
             Add Item
@@ -50,11 +50,6 @@ const Header = () => {
           </Link>
             </>
           }
-     
-         
-        
-        
-
          
         </nav>
 

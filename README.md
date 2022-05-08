@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# BIM || Bike Inventory Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is BIM [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+## Available Scripts
 
-In the project directory, you can run:
+## About BIM || Bike Inventory Management:
+
+* In this website have 6 page home about blogs, inventory , add Item. 
+
+
+
 
 ### `npm start`
 

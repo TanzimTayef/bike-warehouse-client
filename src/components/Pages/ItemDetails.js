@@ -4,10 +4,9 @@ import { useParams } from 'react-router-dom';
 const ItemDetails = () => {
     const [item, setItem] = useState({});
   const { inventoresId } = useParams();
-  const [quan, setQuan] = useState();
+  const [reload, setReload] = useState(true);
 
-
-
+  
   
   
     useEffect(() => {
@@ -16,27 +15,56 @@ const ItemDetails = () => {
       fetch(url)
         .then((res) => res.json())
         .then((data) => setItem(data));
-    }, [inventoresId]);
+    }, [inventoresId, reload]);
 
   
-    // handle Restock button to add the quantity:
-  // const handleDelivered = (id) => {
-  //   const quan = item.quantity - 1;
-  //   const newQuan = quan;
-  //   const url = `http://localhost:8080/stocks/${id}`;
-  //   fetch(url, {
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json"
-  //     },
-  //     body: JSON.stringify(newQuan)
-  //   })
-  //     .then(response => response.json)
-  //     .then(data => console.log("success", data)); 
-  // }
+    // handle Delivered button to add the quantity:
+  const handleDelivered = (id) => {
+    const oldQuantity = item.quantity;
+    const newQuantity = parseInt(oldQuantity) - 1;
+    const quantity = {newQuantity} ;
+    console.log(quantity)
+    const url = `http://localhost:8080/stocks/${id}`;
+    console.log(url)
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quantity),
+    })
+      .then(response => response.json())
+      .then(result => {
+        setReload(!reload)
+        console.log("success", result)
+      }); 
+  }
 
-  // Handle delivered to decrease Quantify:
- 
+  // Handle restock to decrease Quantify:
+  const handleRestock = (e) => {
+    e.preventDefault()
+    const inputValue = e.target.number.value;
+    const addQuantity = parseInt(inputValue);
+    e.target.reset()
+    const newQuantity = item.quantity + addQuantity;
+    const updateQuantity = { newQuantity };
+    console.log(newQuantity)
+    const url = `http://localhost:8080/stocks/${inventoresId}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type" : "application/json",
+      },
+      body: JSON.stringify(updateQuantity)
+    })
+      .then(response => response.json())
+      .then(result => {
+        setReload(!reload)
+        console.log(result);
+
+    })
+  
+  }
 
     return (
         <section className="body-font bg-slate-100 pb-16 pt-8">
@@ -54,17 +82,17 @@ const ItemDetails = () => {
                 <img src={item.images} className="max-w-md max-h-md w-full" alt="img" />
                   </div>
                 <div className="md:pl-6 w-96 sm:mt-4">
-                <p className="text-2xl mb-3 font-medium">Quantity: {quan}</p>
-                  <p className="text-xl mb-3 font-m">Price: {item.price}</p>
+                <p className="text-2xl mb-3 font-medium">Quantity: {item.quantity}</p>
+                  <p className="text-xl mb-3 font-m">Price: ${item.price}</p>
   
                   <p className="text-sm">{item.decs}</p>
                   <p className="py-4 text-xl">{item.supplier}</p>
                   <div className="flex flex-wrap justify-center w-full bg-slate-50 pt-4 pb-8 shadow rounded-lg">
-                    <form >
+                    <form onSubmit={handleRestock}>
                       <input type="number" name="number" className="border-2 w-16 mr-2 py-1 px-2 outline-none border-gray-300 " />
                       <button type='submit' className="border hover:bg-slate-800  px-8 py-1 bg-slate-700 text-white">Restock</button>
                     </form>
-                    {/* <button onClick={() => handleDelivered(item._id)}  className="ml-6 border px-4 hover:bg-slate-500 bg-slate-400 text-white font-medium">Delivered</button> */}
+                    <button onClick={() => handleDelivered(item._id)}  className="ml-6 border px-4 hover:bg-slate-500 bg-slate-400 text-white font-medium">Delivered</button>
                   </div>
                 </div>
              </div>

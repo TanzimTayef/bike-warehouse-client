@@ -1,15 +1,15 @@
 import React from 'react';
-import Footer from '../Footer';
-import Header from '../Header';
+
 
 const About = () => {
     return (
-        <div>
-      
-            <div className='h-screen'>
-
-            </div>
-          
+        <div className='container mx-auto py-16 px-16'>
+            <div >
+                <h1 className='text-4xl text-slate-700 text-center font-bold'>About BIM</h1>
+                <div className='mt-6'>
+                <p>This Bike Inventory Management  website. there stocked multi brand bike. our BIM.........</p>
+              </div>
+          </div>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Stock = ({ stock }) => {
-  const { _id, images, price, name,supplier, decs, quantity } = stock;
+  const { _id, images, price, name, supplier, decs, quantity } = stock;
   const navigate = useNavigate();
 
   const navigateToInventory = (_id) => {

@@ -27,8 +27,8 @@ const Item = ({ stock, setStock }) => {
       <td className=" py-2">
         <img src={images} className="w-16 h-16" alt="" />
       </td>
-      <td className=" py-2">{name}</td>
-      <td className=" py-2">{price}</td>
+      <td className=" py-2">{supplier}</td>
+      <td className=" py-2">{quantity}</td>
       <td className=" py-2">{price}</td>
       <td className=" py-2">1961</td>
       <td className=" py-2">

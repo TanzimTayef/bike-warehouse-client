@@ -62,8 +62,8 @@ const Inventories = () => {
                   <tr className="px-1 py-1 border-b my-6">
                     <th>Id</th>
                     <th>Picture</th>
-                    <th>Supply</th>
-                    <th>Quantify</th>
+                    <th>Supplier</th>
+                    <th>Quantity</th>
                     <th>Price</th>
                     <th>Total</th>
                   </tr>
