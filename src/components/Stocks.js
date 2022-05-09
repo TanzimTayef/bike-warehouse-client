@@ -7,7 +7,7 @@ const Stocks = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/stocks")
+    fetch("https://mighty-mesa-23179.herokuapp.com/stocks")
       .then(res => res.json())
       .then(data => setStocks(data));
   }, []);

@@ -4,7 +4,7 @@ const useStocksDetails = (stockId) => {
     const [stock, setStock] = useState({});
    
     useEffect(() => {
-        fetch(`http://localhost:8080/stocks/${stockId}`)
+        fetch(`https://mighty-mesa-23179.herokuapp.com/stocks/${stockId}`)
             .then(res => res.json())
             .then(data => setStock(data));
     }, [stockId])

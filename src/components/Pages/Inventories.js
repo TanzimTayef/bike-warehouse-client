@@ -13,7 +13,7 @@ const Inventories = () => {
   }
 
   useEffect(() => {
-    fetch("http://localhost:8080/stocks")
+    fetch("https://mighty-mesa-23179.herokuapp.com/stocks")
       .then((res) => res.json())
       .then((data) => setStocks(data));
   }, []);
@@ -22,7 +22,7 @@ const Inventories = () => {
   const handleItemRemove = (id) => {
     const procceed = window.confirm("Are You sure want to remove this?");
     if (procceed) {
-      const url = `http://localhost:8080/stocks/${id}`;
+      const url = `https://mighty-mesa-23179.herokuapp.com/stocks/${id}`;
       console.log(url)
       fetch(url, {
         method: "DELETE"

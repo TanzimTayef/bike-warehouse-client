@@ -6,7 +6,7 @@ const AddItems = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    const url = `http://localhost:8080/stocks/`;
+    const url = `https://mighty-mesa-23179.herokuapp.com/stocks/`;
     fetch(url, {
       method: "POST",
       header: {
@@ -16,6 +16,7 @@ const AddItems = () => {
     })
       .then((res) => res.json())
       .then((result) => console.log(result));
+    
   };
 
   return (
@@ -30,7 +31,7 @@ const AddItems = () => {
           />
           <input placeholder="Price" className="border mb-4  w-full bg-sky-50 rounded shadow-sm  focus:outline-none focus:border-indigo-500 text-base px-4 py-2" {...register("price")} />
    
-          <input placeholder="Photo url" className="border mb-4 w-full bg-sky-50 rounded shadow-sm  focus:outline-none focus:border-indigo-500 text-base px-4 py-2" {...register("url")} />
+          <input placeholder="Photo url" className="border mb-4 w-full bg-sky-50 rounded shadow-sm  focus:outline-none focus:border-indigo-500 text-base px-4 py-2" {...register("images")} />
           <textarea placeholder="Description" className="border mb-4 w-full bg-sky-50 rounded shadow-sm  focus:outline-none focus:border-indigo-500 text-base px-4 py-2" type="number" {...register("desc")} />
           <input value="Add Item" className="border text-slate-200 bg-slate-800 border-0 py-2 mt-4 focus:outline-none hover:bg-slate-700 rounded text-md block w-full uppercase font-bold" type="submit" />
         </form>

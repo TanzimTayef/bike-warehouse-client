@@ -10,7 +10,7 @@ const ItemDetails = () => {
   
   
     useEffect(() => {
-      const url = `http://localhost:8080/stocks/${inventoresId}`;
+      const url = `https://mighty-mesa-23179.herokuapp.com/stocks/${inventoresId}`;
       console.log(url)
       fetch(url)
         .then((res) => res.json())
@@ -24,7 +24,7 @@ const ItemDetails = () => {
     const newQuantity = parseInt(oldQuantity) - 1;
     const quantity = {newQuantity} ;
     console.log(quantity)
-    const url = `http://localhost:8080/stocks/${id}`;
+    const url = `https://mighty-mesa-23179.herokuapp.com/stocks/${id}`;
     console.log(url)
     fetch(url, {
       method: "PUT",
@@ -49,7 +49,7 @@ const ItemDetails = () => {
     const newQuantity = item.quantity + addQuantity;
     const updateQuantity = { newQuantity };
     console.log(newQuantity)
-    const url = `http://localhost:8080/stocks/${inventoresId}`;
+    const url = `https://mighty-mesa-23179.herokuapp.com/stocks/${inventoresId}`;
     fetch(url, {
       method: "PUT",
       headers: {

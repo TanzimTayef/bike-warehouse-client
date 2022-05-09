@@ -4,7 +4,7 @@ const useServiceDetails = (serviceId) => {
     const [service, setService] = useState({});
 
     useEffect( () =>{
-        const url = `http://localhost:8080/stocks/${serviceId}`;
+        const url = `https://mighty-mesa-23179.herokuapp.com/stocks/${serviceId}`;
         console.log(url);
         fetch(url)
         .then(res => res.json())
