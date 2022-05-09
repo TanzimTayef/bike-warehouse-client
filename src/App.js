@@ -8,13 +8,12 @@ import Blogs from "./components/Pages/Blogs";
 import About from "./components/Pages/About";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
- import ManageItem from "./components/Pages/ManageItem";
+import ManageItem from "./components/Pages/ManageItem";
 import AddItems from "./components/Pages/AddItems";
- import MyItems from "./components/Pages/MyItems";
+import MyItems from "./components/Pages/MyItems";
 import NotFound from "./components/Shared/NotFound";
 import ItemDetails from "./components/Pages/ItemDetails";
 import Inventories from "./components/Pages/Inventories";
-
 
 function App() {
   return (
@@ -25,15 +24,43 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<About />} />
-        <Route path="/manage-item" element={<ManageItem />} />
-        <Route path="/add-item" element={<AddItems />} />
-        <Route path="/my-item" element={<MyItems />} />
-        <Route path="/inventories" element={<Inventories />} />
+        <Route
+          path="/manage-item"
+          element={
+            <RequireAuth>
+              <ManageItem />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/add-item"
+          element={
+            <RequireAuth>
+              <AddItems />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/my-item"
+          element={
+            <RequireAuth>
+              <MyItems />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/inventories"
+          element={
+            <RequireAuth>
+              <Inventories />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/invetores/:inventoresId"
           element={
             <RequireAuth>
-              <ItemDetails/>
+              <ItemDetails />
             </RequireAuth>
           }
         />
