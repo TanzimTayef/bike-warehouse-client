@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import SocalLogin from "../Shared/SocalLogin";
@@ -20,10 +21,14 @@ const Login = () => {
  
 const navigate = useNavigate();
 const location = useLocation();
-let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/";
+  let errorMessage;
  
   if (loading || sending) {
-    return <Loading/>
+    return <div className="h-screen"><Loading/></div>
+  }
+  if (error) {
+    errorMessage = (<span className="border txt-center border-red-600 rounded py-2 px-4 bg-red-50 mx-auto ">{error?.message}</span>);
   }
 
  if (user) {
@@ -34,23 +39,28 @@ let from = location.state?.from?.pathname || "/";
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
     e.target.reset();
-
   }
 
 
-  const handleResetPassword = (e) => {
-     sendPasswordResetEmail(email);
-    alert("send email for reset password");
+  const handleResetPassword = () => {
+    if (email) {
+       sendPasswordResetEmail(email);
+        toast('Sent email');
+    }
+    else{
+        toast('please enter your email address');
+    }
   }
 
 
 
   return (
     <div className="bg-gray-100">
-      <div className=" md:w-1/3 py-16 mx-6 md:mx-auto">
+      <div className=" md:w-1/3 py-16  mx-6 md:mx-auto">
         <h1 className="text-3xl text-center font-bold mb-12">Sign in to your account</h1>
-        <div className=" px-8 py-12 shadow-md bg-white rounded-lg">
-          <form onSubmit={handleLoginForm}>
+        <div className=" px-8 pb-12 pt-8 shadow-md bg-white rounded-lg">
+          <p>{errorMessage }</p>
+          <form className="mt-4" onSubmit={handleLoginForm}>
             <div className="text-left mb-4">
               <label
                 className="text-base font-medium text-gray-500"
@@ -65,6 +75,7 @@ let from = location.state?.from?.pathname || "/";
                 name="email"
                 placeholder="Your email"
                 id=""
+                required
               />
             </div>
             <div className="text-left mb-4">
@@ -81,6 +92,7 @@ let from = location.state?.from?.pathname || "/";
                 name="password"
                 placeholder="password"
                 id=""
+               
               />
             </div>
             <div className="flex justify-between mb-8">
@@ -95,7 +107,7 @@ let from = location.state?.from?.pathname || "/";
                 Forgot password?
               </button>
             </div>
-            <button className="border block w-full py-2 rounded-lg bg-teal-800 text-white uppercase hover:bg-teal-600">
+            <button className="border block w-full py-2 rounded-lg bg-slate-700 text-white uppercase hover:bg-gray-500">
               Sign in
             </button>
           </form>
@@ -106,6 +118,7 @@ let from = location.state?.from?.pathname || "/";
             </Link>
           </div>
           <SocalLogin />
+          <ToastContainer />
         </div>
       </div>
     </div>

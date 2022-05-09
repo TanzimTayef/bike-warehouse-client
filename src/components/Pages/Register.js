@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocalLogin from "../Shared/SocalLogin";
 import auth from "../../firebase.init";
@@ -12,10 +12,14 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   let navigate = useNavigate();
-
+  let errorMessage;
 
   if (loading) {
-    return <Loading/>
+    return  <div className="h-screen">  <Loading/></div>
+  }
+
+  if (error) {
+    errorMessage = (<span className="border txt-center border-red-600 rounded py-2 px-4 bg-red-50 mx-auto ">{error?.message}</span>);
   }
 
   // user navigate
@@ -23,7 +27,7 @@ const Register = () => {
       navigate("/");
     }
 
-  
+
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -35,14 +39,17 @@ const Register = () => {
 
     // validation
     if (password.length < 6) {
-      console.log("password must be at least 6 characters");
+      alert("password must be at least 6 characters");
+      return;
     }
     if (password !== confirmPassword) {
-      console.log("password don't match");
-    }
+     alert("Password don't matched!!");
+      return;
+    } 
+    createUserWithEmailAndPassword(email, password);
 
     // create user
-    createUserWithEmailAndPassword(email, password);
+  
     e.target.reset();
     
   };
@@ -51,8 +58,9 @@ const Register = () => {
     <div className="bg-gray-100">
       <div className=" md:w-1/3 py-16 mx-6 md:mx-auto">
         <h1 className="text-3xl text-center font-bold mb-12">Create an account</h1>
-        <div className=" px-8 py-12 shadow-md bg-white rounded-lg">
-          <form onSubmit={handleRegister}>
+        <div className=" px-8 py-8 shadow-md bg-white rounded-lg">
+          <p className="text-red-500">{errorMessage}</p>
+          <form className="pt-4" onSubmit={handleRegister}>
             <div className="text-left mb-4">
               <label
                 className="text-base font-medium text-gray-500"
@@ -66,6 +74,7 @@ const Register = () => {
                 name="name"
                 placeholder="Your name"
                 id=""
+               
               />
             </div>
             <div className="text-left mb-4">
@@ -81,6 +90,7 @@ const Register = () => {
                 name="email"
                 placeholder="Your email"
                 id=""
+                required
               />
             </div>
             <div className="text-left mb-4">
@@ -96,6 +106,7 @@ const Register = () => {
                 name="password"
                 placeholder="password"
                 id=""
+                required
               />
             </div>
             <div className="text-left mb-4">
@@ -111,19 +122,22 @@ const Register = () => {
                 name="confirmPassword"
                 placeholder="Confirm password"
                 id=""
+                required
               />
             </div>
-            <div className="flex justify-between mb-8">
+            <div className="flex justify-between mb-4">
               <div>
-                <input type="checkbox" name="checkbox" id="" />
-                <label className="px-1 font-medium" htmlFor="checkbox">
+               
+                <input type="checkbox" name="terms" id="terms" />
+                <label className="px-1 font-medium" htmlFor="terms">
                   Remember me
                 </label>
               </div>
             </div>
+            
             <button
               type="submit"
-              className="border block w-full py-2 rounded-lg bg-teal-800 text-white uppercase hover:bg-teal-600"
+              className="border block w-full py-2 rounded-lg bg-slate-700 text-white uppercase hover:bg-gray-500"
             >
               Sign in
             </button>
